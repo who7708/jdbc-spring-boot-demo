@@ -33,6 +33,13 @@ public class CustomControllerJDK {
         return customerRes;
     }
 
+    @RequestMapping("/insert2")
+    public Customer insertSelective2(@RequestBody Customer customer) throws Exception {
+        Customer customerRes = customerService.insertSelective2(customer);
+        System.out.println(customerRes);
+        return customerRes;
+    }
+
     // @RequestMapping("/del")
     // public Customer delete(long id) {
     //     int delCount2 = customerDaoJDK.delete(id);

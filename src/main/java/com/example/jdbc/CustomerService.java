@@ -10,4 +10,7 @@ import org.springframework.transaction.annotation.Transactional;
 public interface CustomerService {
     @Transactional(rollbackFor = Exception.class)
     Customer insertSelective(Customer customer) throws Exception;
+
+    // @Transactional(rollbackFor = Exception.class)
+    Customer insertSelective2(Customer customer) throws Exception;
 }

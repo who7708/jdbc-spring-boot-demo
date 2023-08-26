@@ -12,7 +12,7 @@ public interface CustomerDaoJDK {
      *
      * @return
      */
-    @Transactional(rollbackFor = Exception.class)
+    // @Transactional(rollbackFor = Exception.class)
     Customer insertSelective(Customer customer) throws Exception;
 
     // int delete(long id);

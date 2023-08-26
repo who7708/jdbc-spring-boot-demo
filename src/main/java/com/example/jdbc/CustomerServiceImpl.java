@@ -23,4 +23,14 @@ public class CustomerServiceImpl implements CustomerService {
         }
         return customerRes;
     }
+
+    @Override
+    @Transactional(rollbackFor = Exception.class)
+    public Customer insertSelective2(Customer customer) throws Exception {
+        Customer customerRes = customerDaoJDK.insertSelective(customer);
+        if (customerRes.getId() % 2 == 0) {
+            throw new Exception("异常了");
+        }
+        return customerRes;
+    }
 }
